@@ -1,0 +1,228 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Media Compendiumr</title>
+
+    
+    <link rel="stylesheet" href="/webstyle.css">
+</head>
+
+<body>
+
+    <div class="shell">
+
+        
+        <main>
+
+            
+            <header>
+
+                
+                <div>
+
+                    <h1>Media Compendium</h1>
+
+                    <p class="subtitle">
+                        For all your media storage and organization needs.
+                    </p>
+                </div>
+
+                
+                <div class="header-actions">
+
+                    <button id="folderBtn" class="btn secondary">
+                        Create folder
+                    </button>
+
+                    <label class="btn primary" for="uploadInput">
+                        ↑ Upload files
+                    </label>
+
+                    
+                    <input
+                        id="uploadInput"
+                        type="file"
+                        multiple
+                        hidden
+                    >
+
+                </div>
+
+            </header>
+
+
+           
+
+            <section class="toolbar">
+
+               
+                <div
+                    id="breadcrumbs"
+                    class="breadcrumbs">
+                </div>
+
+                
+                <div class="search-wrap">
+
+                    <input
+                        id="searchInput"
+                        type="search"
+                        placeholder="Search filenames…"
+                        aria-label="Search filenames"
+                    >
+
+                </div>
+
+            </section>
+
+
+        
+
+            <section class="stats">
+
+      
+                <div class="file-info">
+                    <span class="stat-label">FILES</span>
+                    <strong id="fileCount">—</strong>
+                </div>
+
+                <div class="file-info">
+                    <span class="stat-label">FOLDERS</span>
+                    <strong id="folderCount">—</strong>
+                </div>
+
+                <div class="file-info">
+                    <span class="stat-label">
+                        FILE SIZE IN VIEW
+                    </span>
+
+                    <strong id="totalSize">—</strong>
+                </div>
+
+            </section>
+
+
+
+            <section class="content-head">
+
+                
+                <div>
+                    <h2 id="viewTitle">All files</h2>
+
+                    <p id="status" aria-live="polite">
+                       
+                    </p>
+                </div>
+
+                
+                <div class="controls">
+
+                    
+                    <select id="sortSelect" aria-label="Sort">
+
+                        <option value="name">
+                            Name
+                        </option>
+
+                        <option value="date">
+                            Last Added
+                        </option>
+
+                        <option value="size">
+                            Size
+                        </option>
+
+                    </select>
+
+
+                </div>
+
+            </section>
+
+
+           
+            <div
+                id="error"
+                role="alert"
+                hidden>
+            </div>
+
+
+           
+            <section
+                id="items"
+                class="gallery"
+                aria-label="Media files">
+            </section>
+
+        </main>
+
+    </div>
+
+
+    
+    <!-- Preview Pop Up -->
+
+    <dialog id="previewDialog">
+
+        
+        <div class="dialog-header">
+
+            
+            <div>
+                <strong id="previewTitle"></strong>
+
+                <div
+                    id="previewInfo"
+                    class="muted">
+                </div>
+            </div>
+
+            
+            <button
+                id="closePreview"
+                class="icon-btn"
+                aria-label="Close preview">
+                ✕
+            </button>
+
+        </div>
+
+
+        
+        <div
+            id="previewBody"
+            class="preview-body">
+        </div>
+
+
+        <!-- PREVIEW ACTION BUTTONS -->
+        <div class="dialog-actions">
+
+            
+            <a
+                id="downloadPreview"
+                class="btn primary">
+                Download
+            </a>
+
+            
+            <button
+                id="deletePreview"
+                class="btn danger">
+                Delete
+            </button>
+
+        </div>
+
+    </dialog>
+
+    <script src="/rendering.js" defer></script>
+
+</body>
+</html>
